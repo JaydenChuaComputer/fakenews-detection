@@ -143,7 +143,7 @@ streamlit run web_app.py
 │   └── cnns_tuned.h5               # Exported CNN Model with stemming data and hyperparameter tuning
 ├── Vectorized_Matrix/
 │   └── tfidf_vectorizer_stem.pkl   # Exported TF-IDF Vectorizer with stemming
-│   └── tfidf_vectorizer_lemma.pkl   # Exported TF-IDF Vectorizer with lemmatisation
+│   └── tfidf_vectorizer_lemma.pkl  # Exported TF-IDF Vectorizer with lemmatisation
 ├── web_app.py                      # Main Streamlit application script
 └── requirements.txt                # Python dependencies
 ```
