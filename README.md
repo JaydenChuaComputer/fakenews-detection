@@ -21,6 +21,20 @@ The application offers three distinct ways to analyze news for misinformation:
 
 ---
 
+## 📚 Dataset & Sources
+To ensure the model was trained on a highly diverse and robust vocabulary, the final dataset was constructed by merging multiple distinct open-source datasets. This combined dataset includes political news, global events, COVID-19 misinformation, and satirical articles.
+The data was sourced and aggregated from the following repositories:
+* [Elvin Data (Kaggle)](https://www.kaggle.com/datasets/elvinagammed/covid19-fake-news-dataset-nlp) 
+* [Jruvika Data (Kaggle)](https://www.kaggle.com/datasets/jruvika/fake-news-detection) 
+* [Saurabh Data (Kaggle)](https://www.kaggle.com/datasets/saurabhshahane/fake-news-classification) 
+* [Challenge Data (Kaggle)](https://www.kaggle.com/competitions/fake-news/data)
+* [IEEE Data (IEEE Dataport)](https://ieee-dataport.org/open-access/fnid-fake-news-inference-dataset) 
+* [Ibrahim Data (Kaggle)](https://www.kaggle.com/datasets/ibrahimkaratas/fakenews/data) 
+* [Jair Data (Kaggle)](https://www.kaggle.com/datasets/liberoliber/onion-notonion-datasets/data) 
+* [Rahul Data (Kaggle)](https://www.kaggle.com/datasets/iamrahulthorat/fakenews-csv) 
+
+---
+
 ## 📊 Project Workflow
 The development of this application followed a standard data science lifecycle, documented in the included Jupyter Notebooks:
 
