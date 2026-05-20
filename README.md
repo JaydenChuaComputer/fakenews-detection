@@ -6,15 +6,14 @@
 
 A machine learning-powered web application built with Streamlit that analyzes news content to detect potential misinformation. By leveraging Natural Language Processing (NLP) and a trained Logistic Regression model, this tool classifies text as either "True News" or "Fake News" and provides a visual breakdown of the prediction probabilities.
 
-.
+<br>
 
 ## 🌟 Test Now
 No setup required! You can view the live versions of the app right now:
-* 🌐 **View on Web:** [Fake News Detection](https://fakenews-detection-1bmw.onrender.com/)
-
+* 🌐 **View on Web:** [Fake News Detection](https://fakenews-detection-1bmw.onrender.com/) <br>
 *Note: The app is hosted on a free server, so it might take some times to load and analyse text.*
 
-.
+<br>
 
 ## 🚀 Key Features
 The application offers three distinct ways to analyze news for misinformation (only available in English):
@@ -41,7 +40,7 @@ The data was sourced and aggregated from the following repositories:
 ## 📊 Project Workflow
 The development of this application followed a standard data science lifecycle, documented in the included Jupyter Notebooks:
 
-.
+<br>
 
 ### 1. Data Understanding (`data_understanding.ipynb`)
 This phase focuses on Exploratory Data Analysis (EDA) to comprehend the dataset before training. Key steps include:
@@ -50,7 +49,7 @@ This phase focuses on Exploratory Data Analysis (EDA) to comprehend the dataset 
 * Identifying missing values, duplicates, and noisy data that require cleaning.
 * Generating word clouds and frequency distributions to identify common vocabulary used in both classes.
 
-.
+<br>
 
 ### 2. Data Modelling (`data_modelling.ipynb`)
 This phase transforms the raw text into a mathematical format that machines can learn from. Key steps include:
@@ -63,17 +62,17 @@ This phase transforms the raw text into a mathematical format that machines can 
 ## 🧠 Model Selection & Performance
 After training and evaluating multiple machine learning models in the Data Modelling phase, **Logistic Regression** paired with a **Stemmed TF-IDF Vectorizer** was selected as the final production model.
 
-.
+<br>
 
 ### Why Logistic Regression (`lrs_cv.pkl`)?
 While complex models like Random Forest or Deep Learning are powerful, Logistic Regression was chosen because it excels at binary text classification (True vs. Fake). It is highly computationally efficient, prevents overfitting on high-dimensional text data, and most importantly, it outputs exact **probability scores** (e.g., 85% True / 15% Fake), which is essential for the stacked bar charts in the web app.
 
-.
+<br>
 
 ### Why TF-IDF with Stemming (`tfidf_vectorizer_stem.pkl`)?
 Instead of a basic word-count (CountVectorizer), **TF-IDF** (Term Frequency-Inverse Document Frequency) was used. It penalizes highly frequent, uninformative words across the dataset while giving weight to unique, defining keywords. Pairing this with **Stemming** reduces the overall vocabulary size (e.g., treating "running," "runs," and "ran" as the same root word), making the model faster, leaner, and more generalized to new articles.
 
-.
+<br>
 
 ### 📈 Final Model Performance
 The selected Logistic Regression model with data used with TF-IDF and stemmed achieved the following performance metrics on the testing dataset:
