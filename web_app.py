@@ -90,16 +90,27 @@ def fetch_article_text(url):
         return f"Error: {e}"
     
 def extract_url(url):
-    response = requests.get(url)
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+    }
+    response = requests.get(url, headers=headers)
     if response.status_code == 200:
         soup = BeautifulSoup(response.content, 'html.parser')
         links = [a['href'] for a in soup.find_all('a', href=True)]
-        links = [link.replace('/url?q=', '').split('&sa=')[0] for link in links[16:26]]
-        return links
+        filtered_links = []
+        for link in links:
+            if '/url?q=' in link and 'accounts.google.com' not in link and 'support.google.com' not in link:
+                clean_link = link.replace('/url?q=', '').split('&sa=')[0]
+                filtered_links.append(clean_link)
+                
+        return filtered_links[:10]
     return []
 
 def extract_text(url):
-    response = requests.get(url)
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+    }
+    response = requests.get(url, headers=headers, timeout=5)
     if response.status_code == 200:
         soup = BeautifulSoup(response.content, 'html.parser')
         paragraphs = soup.find_all('p')
@@ -193,15 +204,19 @@ with tab3:
         extracted_texts = []
 
         if user_input:
+            search_query = user_input.replace(" ", "+")
+            url = f"https://www.google.com/search?q={search_query}&tbm=nws"
             links = extract_url(url)
+            if not links:
+                st.error("No links were found. Google might be temporarily blocking the request, or no news was found for this keyword.")
             count = 1
 
             for i, link in enumerate(links[:10]):        
                 # Extract article text and display domain
                 try:
                     text = extract_text(link)
-                except:
-                    break
+                except Exception as e:
+                    continue
 
                 # Display detection results for each article
                 if len(text) > 300 and detect(text) == "en":
@@ -218,15 +233,9 @@ with tab3:
                     # Expandable section for full article
                     with st.expander("Show Full Article"):
                         st.text(text)
+                    count += 1
+                    st.markdown("---")
                 else:
                     continue
-
-                count += 1
-
-                st.write("")
-                st.write("")
-
-                # Add a horizontal line
-                st.markdown("---")
         else:
             st.warning("Please enter a keyword to analyze.")

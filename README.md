@@ -3,7 +3,13 @@
 
 # 📰 Fake News Detection Web Application
 *Last Updated: 20 May 2026*
+
 A machine learning-powered web application built with Streamlit that analyzes news content to detect potential misinformation. By leveraging Natural Language Processing (NLP) and a trained Logistic Regression model, this tool classifies text as either "True News" or "Fake News" and provides a visual breakdown of the prediction probabilities.
+
+.
+## 🌟 Test Now
+No setup required! You can view the live versions of the app right now:
+* 🌐 **View on Web:** [Fake News Detection](https://fakenews-detection-1bmw.onrender.com/)
 
 .
 ## 🚀 Key Features
