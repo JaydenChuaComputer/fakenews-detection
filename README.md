@@ -14,7 +14,7 @@ No setup required! You can view the live versions of the app right now:
 .
 
 ## 🚀 Key Features
-The application offers three distinct ways to analyze news for misinformation:
+The application offers three distinct ways to analyze news for misinformation (only available in English):
 * **Long Passage Detection:** Paste any news article snippet or long-form text (minimum 300 characters) directly into the app for instant analysis.
 * **URL Link Detection:** Paste a link to a news article. The app automatically scrapes the webpage, extracts the main paragraph text, and analyzes the content.
 * **Keyword Search Detection:** Enter a topic or keyword (e.g., "election results"). The app queries Google News, extracts the top articles, and individually evaluates each source, providing a breakdown of the domains and their respective truth probabilities.
