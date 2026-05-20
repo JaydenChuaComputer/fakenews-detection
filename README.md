@@ -7,6 +7,11 @@
 A machine learning-powered web application built with Streamlit that analyzes news content to detect potential misinformation. By leveraging Natural Language Processing (NLP) and a trained Logistic Regression model, this tool classifies text as either "True News" or "Fake News" and provides a visual breakdown of the prediction probabilities.
 
 .
+## 🌟 Test Now
+No setup required! You can view the live versions of the app right now:
+* 🌐 **View on Web:** [Fake News Detection](https://fakenews-detection-1bmw.onrender.com/)
+
+.
 ## 🚀 Key Features
 The application offers three distinct ways to analyze news for misinformation (only available for English):
 * **Long Passage Detection:** Paste any news article snippet or long-form text (minimum 300 characters) directly into the app for instant analysis.
